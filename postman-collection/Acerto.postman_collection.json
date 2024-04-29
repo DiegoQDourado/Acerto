@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "7f6b3e2e-e97a-4104-b056-4083d640191a",
+		"name": "Acerto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7153/produtos/9ff19553-7788-4ca8-a93d-f1a9f645efc8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7153",
+							"path": [
+								"produtos",
+								"9ff19553-7788-4ca8-a93d-f1a9f645efc8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"produto1\",\r\n  \"descricao\": \"produto numero 1\",\r\n  \"preco\": 0,\r\n  \"quantidadeEstoque\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7153/produtos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7153",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"teste\",\r\n  \"descricao\": \"testtt\",\r\n  \"preco\": 10,\r\n  \"quantidadeEstoque\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7153/produtos/9ff19553-7788-4ca8-a93d-f1a9f645efc9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7153",
+							"path": [
+								"produtos",
+								"9ff19553-7788-4ca8-a93d-f1a9f645efc9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7153/produtos/9ff19553-7788-4ca8-a93d-f1a9f645efc9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7153",
+							"path": [
+								"produtos",
+								"9ff19553-7788-4ca8-a93d-f1a9f645efc9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBFRElETy5QT1NUIiwiUEVESURPLkdFVCJdLCJuYW1laWQiOiJwZWRpZG9hcGkiLCJuYmYiOjE3MTQyNzI1NzcsImV4cCI6MjUzNDAyMzAwODAwLCJpYXQiOjE3MTQyNzI1Nzd9.BOruEYVqe-ihFgxMmz-5Lr-2HUXkCny43nQQCQMPr5I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7085/pedidos/15",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7085",
+							"path": [
+								"pedidos",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBFRElETy5QT1NUIiwiUEVESURPLkdFVCJdLCJuYW1laWQiOiJwZWRpZG9hcGkiLCJuYmYiOjE3MTQyNzI1NzcsImV4cCI6MjUzNDAyMzAwODAwLCJpYXQiOjE3MTQyNzI1Nzd9.BOruEYVqe-ihFgxMmz-5Lr-2HUXkCny43nQQCQMPr5I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo\": 1745,\r\n  \"descricao\": \"pedido15\",\r\n  \"valorTotal\": 10,\r\n  \"pedidoItems\": [\r\n    {\r\n      \"id\": \"a7249c98-e04f-42d1-88c5-5b576d7b85a4\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7085/pedidos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7085",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7040/token?apiKey=produtoapi",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7040",
+							"path": [
+								"token"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "produtoapi"
+								},
+								{
+									"key": "apiKey",
+									"value": "pedidoapi",
+									"disabled": true
+								},
+								{
+									"key": "apiKey",
+									"value": "unknow",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Docker",
+			"item": [
+				{
+					"name": "Produto",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/produtos/5be38022-aa28-4a6a-a345-e6385d3c4f53",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"produtos",
+										"5be38022-aa28-4a6a-a345-e6385d3c4f53"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"produto1\",\r\n  \"descricao\": \"produto numero 1\",\r\n  \"preco\": 10,\r\n  \"quantidadeEstoque\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"produto1\",\r\n  \"descricao\": \"produto1\",\r\n  \"preco\": 11,\r\n  \"quantidadeEstoque\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/produtos/d2eca7ac-725a-4ce4-aa7c-09f9fdd665f4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"produtos",
+										"d2eca7ac-725a-4ce4-aa7c-09f9fdd665f4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBST0RVVE8uUE9TVCIsIlBST0RVVE8uUFVUIiwiUFJPRFVUTy5ERUxFVEUiLCJQUk9EVVRPLkdFVCJdLCJuYW1laWQiOiJwcm9kdXRvYXBpIiwibmJmIjoxNzE0MjcyNjE5LCJleHAiOjI1MzQwMjMwMDgwMCwiaWF0IjoxNzE0MjcyNjE5fQ.-AhlmX-ghj7KiRiqN2vjxdcpq2syz5cSZvtzKcNhrlo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/produtos/d2eca7ac-725a-4ce4-aa7c-09f9fdd665f4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"produtos",
+										"d2eca7ac-725a-4ce4-aa7c-09f9fdd665f4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pedidos",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBFRElETy5QT1NUIiwiUEVESURPLkdFVCJdLCJuYW1laWQiOiJwZWRpZG9hcGkiLCJuYmYiOjE3MTQyNzYyNjQsImV4cCI6MjUzNDAyMzAwODAwLCJpYXQiOjE3MTQyNzYyNjR9.5eqdLTIbWFn1J47bnBX7ITRsafmli78OZcXdl5fuAgI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/pedidos/156",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"pedidos",
+										"156"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjpbIlBFRElETy5QT1NUIiwiUEVESURPLkdFVCJdLCJuYW1laWQiOiJwZWRpZG9hcGkiLCJuYmYiOjE3MTQyNzYyNjQsImV4cCI6MjUzNDAyMzAwODAwLCJpYXQiOjE3MTQyNzYyNjR9.5eqdLTIbWFn1J47bnBX7ITRsafmli78OZcXdl5fuAgI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"codigo\": 165,\r\n  \"descricao\": \"pedido17\",\r\n  \"valorTotal\": 10,\r\n  \"pedidoItems\": [\r\n    {\r\n      \"id\": \"5be38022-aa28-4a6a-a345-e6385d3c4f53\",\r\n      \"quantidade\": 2\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/pedidos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/token?apiKey=unknow",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"token"
+									],
+									"query": [
+										{
+											"key": "apiKey",
+											"value": "produtoapi",
+											"disabled": true
+										},
+										{
+											"key": "apiKey",
+											"value": "pedidoapi",
+											"disabled": true
+										},
+										{
+											"key": "apiKey",
+											"value": "unknow"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

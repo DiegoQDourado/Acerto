@@ -1,0 +1,110 @@
+﻿version: "3.3"
+
+services:
+
+  produto-api:
+    build:
+      context: src\ProdutosApi
+      dockerfile: Dockerfile
+    environment:
+      - UseSwagger=true
+      - ConnectionStrings__ProdutosConnectionString=Host=postgresdb-produto;Port=5432;Pooling=true;Database=Acerto;User Id=acerto;Password=acerto;      
+      - Jwt__SecretKey=476Iig3V6cGRwuDroMMTw+MmPaPzy6gdwxoxuFQv1TGLgV7pCFBus9nVY1nGj2Xj
+    networks:
+      - backend
+      - external
+    ports:
+      - "8082:8080"
+    depends_on:
+      - postgresdb-produto
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  pedido-api:
+    build:
+      context: src\PedidosApi
+      dockerfile: Dockerfile
+    environment:
+      - UseSwagger=true
+      - ConnectionStrings__PedidosConnectionString=Host=postgresdb-pedido;Port=5432;Pooling=true;Database=Acerto;User Id=acerto;Password=acerto;
+      - Rabbit__Host=rabbitmq
+      - Rabbit__Port=5672
+      - Jwt__SecretKey="CPtVs9/rq1iCQiUTTnXVMDXXcHO02IEGjYQPPNEid79hAJl8XnD2CQOknW/GXI3H"
+      - ProdutoApi__ParallelCallCount=5
+      - ProdutoApi__Protocol=http
+      - ProdutoApi__BaseUrl=produto-api
+      - ProdutoApi__Port=8080
+    networks:
+      - backend
+      - external
+    ports:
+      - "8083:8080"
+    depends_on:
+      - postgresdb-pedido
+      - rabbitmq
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  authentication-api:
+    build:
+      context: src\AutenticationApi
+      dockerfile: Dockerfile
+    environment:
+      - UseSwagger=true
+      - Jwt__SecretKey_Produto="476Iig3V6cGRwuDroMMTw+MmPaPzy6gdwxoxuFQv1TGLgV7pCFBus9nVY1nGj2Xj"
+      - Jwt__SecretKey_Pedido="CPtVs9/rq1iCQiUTTnXVMDXXcHO02IEGjYQPPNEid79hAJl8XnD2CQOknW/GXI3H"
+    networks:
+      - backend
+      - external
+    ports:
+      - "8081:8080"
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  postgresdb-produto:
+    image: postgres
+    volumes:
+      - ./postegresInit/initSqlProdutos.sql:/docker-entrypoint-initdb.d/initSqlProdutos.sql
+    environment:
+      POSTGRES_USER: "acerto"
+      POSTGRES_PASSWORD: "acerto"
+      POSTGRES_DB: "Acerto"
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+  
+  postgresdb-pedido:
+    image: postgres
+    volumes:
+      - ./postegresInit/initSqlPedidos.sql:/docker-entrypoint-initdb.d/initSqlPedido.sql
+    environment:
+      POSTGRES_USER: "acerto"
+      POSTGRES_PASSWORD: "acerto"
+      POSTGRES_DB: "Acerto"
+    networks:
+      - backend
+    ports:
+      - "5434:5432"
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - backend
+
+networks:
+  backend:
+    driver: bridge
+  external:
+    driver: overlay
+    attachable: true
